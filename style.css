@@ -1,0 +1,189 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #f1f8e9 0%, #dcedc8 100%);
+    color: #1b5e20;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    transition: all 0.3s ease;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+/* MODO ESCURO */
+body.dark-mode {
+    background: linear-gradient(45deg, #050a05, #0d1a0d);
+    color: #e8f5e9;
+}
+
+.dark-mode .container {
+    background: rgba(20, 30, 20, 0.95);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+    border: 1px solid #1b5e20;
+}
+
+.dark-mode h1 { color: #ffffff !important; }
+/* ----------- */
+
+.container {
+    max-width: 480px;
+    padding: 45px 35px;
+    background: #ffffff;
+    border-radius: 30px;
+    box-shadow: 0 15px 40px rgba(27, 94, 32, 0.15);
+    text-align: center;
+    z-index: 1;
+    width: 92%;
+    box-sizing: border-box;
+    margin: 40px 0;
+    border: 1px solid #e8f5e9;
+}
+
+/* FOTO DE PERFIL COM INTERAÇÃO */
+.profile-wrapper {
+    display: inline-block;
+    border-radius: 50%;
+    padding: 5px;
+    background: linear-gradient(45deg, #2e7d32, #8bc34a);
+    margin-bottom: 20px;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.profile-pic {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    border: 3px solid white;
+}
+
+/* Efeito de aumento na foto ao passar o mouse */
+.profile-wrapper:hover {
+    transform: scale(1.15) rotate(3deg);
+    box-shadow: 0 10px 25px rgba(46, 125, 50, 0.3);
+}
+
+h1 {
+    font-size: 26px;
+    margin-bottom: 12px;
+    color: #1b5e20;
+    font-weight: 800;
+}
+
+p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: #445d44;
+}
+
+/* ESTILO DOS BOTÕES */
+.btn {
+    display: flex;
+    width: 100%;
+    margin: 14px 0;
+    padding: 18px;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    font-size: 16px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* BOTÃO 1: DESTAQUE SUPREMO (Estilo Descubra/Lex) */
+.btn.highlight-main {
+    background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 100%) !important;
+    color: #ffffff !important;
+    border: none;
+    box-shadow: 0 8px 20px rgba(27, 94, 32, 0.4);
+    animation: pulseGlow 2.5s infinite;
+}
+
+.btn.highlight-main::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 25%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.25);
+    transform: rotate(30deg);
+    animation: shine 3.5s infinite;
+}
+
+@keyframes pulseGlow {
+    0% { box-shadow: 0 0 0 0 rgba(46, 125, 50, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(46, 125, 50, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(46, 125, 50, 0); }
+}
+
+@keyframes shine {
+    0% { left: -60%; }
+    25% { left: 125%; }
+    100% { left: 125%; }
+}
+
+/* Botões Secundários */
+.btn.primary {
+    background-color: #f1f8e9;
+    color: #2e7d32;
+    border: 2px solid #a5d6a7;
+}
+
+.btn.telecom {
+    background-color: #1a1a1a;
+    color: #ccff90;
+    border: 1px solid #33691e;
+}
+
+.btn.business {
+    background-color: #ffffff;
+    color: #388e3c;
+    border: 1px solid #c8e6c9;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.05);
+}
+
+/* PARTÍCULAS (Folhas Escuras) */
+.particle {
+    position: absolute;
+    pointer-events: none;
+    animation: fall 6s linear infinite;
+    /* Mudado para verde escuro para mais visibilidade */
+    color: #1b5e20; 
+    z-index: 0;
+}
+
+@keyframes fall {
+    0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+    20% { opacity: 0.6; }
+    80% { opacity: 0.6; }
+    100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+}
+
+#theme-toggle {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    background: #ffffff;
+    border: 2px solid #c8e6c9;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 22px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    z-index: 10;
+}
