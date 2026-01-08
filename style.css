@@ -208,6 +208,18 @@ p strong {
     border: none;
 }
 
+.btn.tertiary-telecom {
+    background-color: #4caf50; /* Um verde vibrante mas equilibrado */
+    color: #ffffff;
+    border: none;
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+}
+
+/* Ajuste para o hover */
+.btn.tertiary-telecom:hover {
+    background-color: #43a047;
+}
+
 /* 2. Clube (Sólido Verde iGreen) */
 .btn.primary-club {
     background-color: var(--accent-green);
